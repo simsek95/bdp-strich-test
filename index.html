@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="initializeTest()">
+
+    <div class="menu-overlay" id="MenuOverlay">
+      <div class="menu">
+        <h1>bdp-TEST</h1>
+        <div class="menu-btn-container">
+          <button class="shadow-border" onclick="goToIntroduction(300)">Start 5 min</button>
+          <button class="shadow-border" onclick="goToIntroduction(180)">Start 3 min</button>
+          <button class="shadow-border" onclick="goToIntroduction(60)">Start 1 min</button>
+        </div>
+      </div>
+    </div>
+
+      <div class="introduction shadow-border hidden" id="Introduction">
+        <p>Check all <span class="intro-letter" id="introLetterDisplay">d</span>s
+           with <span class="intro-letter" id="introLineDisplay">2 I</span>s 
+        </p>
+        <button class="btn" onclick="startGame()">Start</button>
+      </div>
+
+      <div class="shadow-border  introduction hidden" id="Results">
+        <p>
+          Total Count: <span id="TotalCount">11</span>
+          <br>
+          Count/Minute: <span id="CountMinute">11</span>
+          <br>
+          Correct: <span id="CorrectCount">11</span>
+          <br>
+          Rate: <span id="Rate">11%</span>
+        </p>
+        <button class="btn" onclick="reloadPage()">Start Again</button>
+      </div>
+
+    <div class="header bg2 full-width">
+
+      <div class="timer btn shadow-border bg1">
+        <img src="source/img/clock-white.png" alt="">
+        <span id="timer">XX:XX</span>
+      </div>
+
+      <button class="btn shadow-border bg1" id="PauseButton">End</button>
+    </div>
+
+    <div class="information-header bg2">
+      <div class="looking-for-container shadow-border" id="wantedCombinationDisplay">b 2xI</div>
+      <div class="answer-count-container">
+        <div class="answer-count" id="answerCount_Right">Right: 0</div>  
+        <div class="answer-count" id="answerCount_Wrong">Wrong: 0</div>
+      </div>
+
+    </div>
+
+    <div class="mid bg1">
+      <div class="bdp-display">
+       <div class="line tl-line" id="line_tl"></div>
+        <div class="line tm-line" id="line_tm"></div>
+        <div class="line tr-line" id="line_tr"></div>
+        <div class="letter" id="letter">a</div>
+       <div class="line bl-line" id="line_bl"></div>
+       <div class="line bm-line" id="line_bm"></div>
+       <div class="line br-line" id="line_br"></div>
+     </div>
+  </div>
+ <div class="bg2 full-width">
+    <div class="button-container">
+      <button class="btn btn-correct shadow-border" onclick="logAnswer(true)"><img src="source/img/check-white.png" alt=""></button>
+      <button class="btn btn-false shadow-border" onclick="logAnswer(false)"><img src="source/img/cross-white.png" alt=""></button>
+    </div>
+ </div>
+    <script src="combination.class.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
